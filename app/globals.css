@@ -8,13 +8,13 @@ html {
 }
 
 body {
-  background-color: #f9f6f1;
-  color: #2c2a26;
+  background-color: #f8f0e8;
+  color: #0d3316;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
 
 ::selection {
-  background-color: #b8955a;
+  background-color: #d1a62e;
   color: #faf8f3;
 }

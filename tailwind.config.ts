@@ -9,10 +9,11 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        'brand-cream': '#F9F6F1',
+        'brand-cream': '#F8F0E8',
         'brand-ivory': '#FAF8F3',
-        'brand-gold': '#B8955A',
-        'brand-dark': '#2C2A26',
+        'brand-gold': '#D1A62E',
+        'brand-olive': '#8F932D',
+        'brand-dark': '#0D3316',
         'brand-muted': '#7A7670',
       },
       fontFamily: {
