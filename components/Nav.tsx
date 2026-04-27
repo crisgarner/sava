@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
@@ -30,13 +31,15 @@ export default function Nav() {
       }`}
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 md:px-10">
-        <Link href="/" className="flex items-baseline gap-1.5">
-          <span className="font-serif text-3xl font-medium text-brand-dark">
-            Savá
-          </span>
-          <span className="text-sm uppercase tracking-[0.25em] text-brand-gold">
-            Rentals
-          </span>
+        <Link href="/" aria-label="Savá Rentals — inicio" className="flex items-center">
+          <Image
+            src="/logos/logo-wordmark.png"
+            alt="Savá Rentals"
+            width={572}
+            height={448}
+            priority
+            className="h-10 w-auto md:h-12"
+          />
         </Link>
 
         <ul className="hidden items-center gap-9 md:flex">

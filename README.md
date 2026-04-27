@@ -47,12 +47,16 @@ Open <http://localhost:3000>.
   contact.ts          WhatsApp + Instagram helpers, price formatting
 
 /public
+  logos/              Brand marks (wordmark, monogram)
   catalogue/          Catalogue item images (see below)
-    manteleria/
-    cristaleria/
-    cubiertos/
+    manteles-rectangulares/
+    manteles-redondos/
+    servilletas/
+    cristaleria/      (copas)
+    vajilla/
     platos-base/
-    mobiliario/
+    cake-stand/
+    mobiliario/       (columnas, lámparas, sombrillas)
   robots.txt
   sitemap.xml
 ```
@@ -67,18 +71,32 @@ Open <http://localhost:3000>.
 
    ```ts
    {
-     id: 'mantel-rojo-redondo',
-     name: 'Mantel Rojo Redondo',
-     category: 'manteleria',
-     filename: 'manteleria/mantel-rojo-redondo.jpg',
-     rentalPrice: 60,
+     id: 'mantel-eloise-coral',
+     name: 'Mantel Eloise Coral',
+     category: 'manteles-redondos',
+     images: [
+       'manteles-redondos/mantel-eloise-coral.png',
+       'manteles-redondos/mantel-eloise-coral-2.png', // extra angles, optional
+     ],
+     description:
+       'Mantel redondo en tono coral, ideal para celebraciones de día.',
+     rentalPrice: 0, // 0 → renders as "Consultar precio"
      unit: 'por mesa',
      available: true,
    }
    ```
 
-3. The card will appear automatically on `/catalogo` and in the home preview
-   if it's within the first six items.
+3. **Multiple images:** the first image in `images` is the primary used in
+   cards. Additional entries appear as thumbnails on the detail page
+   (`/catalogo/<id>/`) — click a thumbnail to swap the main photo.
+4. **Description:** optional. When omitted, the detail page falls back to
+   a generic description for that category (see `categoryDescriptions` in
+   `data/catalogue.ts`).
+5. **Pricing:** set `rentalPrice` to a number in Lempiras to display the
+   price, or leave it as `0` to render **"Consultar precio"** instead.
+6. The card appears automatically on `/catalogo` and in the home preview
+   (one item per category, up to six). The detail page is generated at
+   build time via `generateStaticParams`.
 
 If an image file is missing, the card gracefully shows a soft gray
 placeholder with the item name. Nothing else breaks.

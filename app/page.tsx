@@ -21,7 +21,15 @@ const instagramPlaceholders = [
 ];
 
 export default function HomePage() {
-  const previewItems = catalogue.slice(0, 6);
+  // Pick one item per category so the home preview spans the catalogue.
+  const seenCategories = new Set<string>();
+  const previewItems = catalogue
+    .filter((item) => {
+      if (seenCategories.has(item.category)) return false;
+      seenCategories.add(item.category);
+      return true;
+    })
+    .slice(0, 6);
 
   return (
     <main id="inicio" className="flex flex-col">
@@ -81,7 +89,7 @@ export default function HomePage() {
             },
           ].map((v) => (
             <div key={v.title} className="flex flex-col gap-3 text-center">
-              <div className="mx-auto h-px w-10 bg-brand-gold" />
+              <div className="mx-auto h-px w-10 bg-brand-olive" />
               <h3 className="font-serif text-2xl text-brand-dark">{v.title}</h3>
               <p className="text-sm leading-relaxed text-brand-muted">
                 {v.body}
@@ -95,7 +103,7 @@ export default function HomePage() {
       <section id="paquetes" className="bg-white px-6 py-20 md:py-28">
         <div className="mx-auto max-w-6xl">
           <div className="mx-auto max-w-2xl text-center">
-            <span className="text-xs font-medium uppercase tracking-[0.25em] text-brand-gold">
+            <span className="text-xs font-medium uppercase tracking-[0.25em] text-brand-olive">
               Paquetes
             </span>
             <h2 className="mt-3 font-serif text-4xl text-brand-dark md:text-5xl">
@@ -134,7 +142,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-6xl">
           <div className="flex flex-col items-start justify-between gap-4 md:flex-row md:items-end">
             <div>
-              <span className="text-xs font-medium uppercase tracking-[0.25em] text-brand-gold">
+              <span className="text-xs font-medium uppercase tracking-[0.25em] text-brand-olive">
                 Catálogo
               </span>
               <h2 className="mt-3 font-serif text-4xl text-brand-dark md:text-5xl">
@@ -160,7 +168,7 @@ export default function HomePage() {
       <section className="bg-white px-6 py-20 md:py-28">
         <div className="mx-auto max-w-6xl">
           <div className="mx-auto max-w-2xl text-center">
-            <span className="text-xs font-medium uppercase tracking-[0.25em] text-brand-gold">
+            <span className="text-xs font-medium uppercase tracking-[0.25em] text-brand-olive">
               Cobertura
             </span>
             <h2 className="mt-3 font-serif text-4xl text-brand-dark md:text-5xl">
@@ -197,7 +205,7 @@ export default function HomePage() {
       {/* Instagram */}
       <section className="bg-brand-cream px-6 py-20 md:py-28">
         <div className="mx-auto max-w-6xl text-center">
-          <span className="text-xs font-medium uppercase tracking-[0.25em] text-brand-gold">
+          <span className="text-xs font-medium uppercase tracking-[0.25em] text-brand-olive">
             Instagram
           </span>
           <h2 className="mt-3 font-serif text-4xl text-brand-dark md:text-5xl">

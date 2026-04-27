@@ -21,7 +21,7 @@ export default function CataloguePage() {
     <main className="bg-brand-cream pt-28 md:pt-32">
       <section className="mx-auto max-w-7xl px-6 pb-20 md:px-10">
         <header className="mb-12 max-w-2xl">
-          <span className="text-xs font-medium uppercase tracking-[0.25em] text-brand-gold">
+          <span className="text-xs font-medium uppercase tracking-[0.25em] text-brand-olive">
             Catálogo
           </span>
           <h1 className="mt-3 font-serif text-5xl text-brand-dark md:text-6xl">

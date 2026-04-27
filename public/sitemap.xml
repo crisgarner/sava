@@ -11,7 +11,17 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://savarentals.com/catalogo/?categoria=manteleria</loc>
+    <loc>https://savarentals.com/catalogo/?categoria=manteles-rectangulares</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://savarentals.com/catalogo/?categoria=manteles-redondos</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://savarentals.com/catalogo/?categoria=servilletas</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -21,12 +31,17 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://savarentals.com/catalogo/?categoria=cubiertos</loc>
+    <loc>https://savarentals.com/catalogo/?categoria=vajilla</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://savarentals.com/catalogo/?categoria=platos-base</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://savarentals.com/catalogo/?categoria=cake-stand</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
