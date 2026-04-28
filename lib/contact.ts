@@ -1,6 +1,5 @@
-// TODO: Replace with real WhatsApp number (also update app/layout.tsx metadata if needed)
-export const WHATSAPP_NUMBER_DISPLAY = '+504 0000-0000';
-export const WHATSAPP_NUMBER_RAW = '50400000000';
+export const WHATSAPP_NUMBER_DISPLAY = '+504 3238-2346';
+export const WHATSAPP_NUMBER_RAW = '50432382346';
 export const INSTAGRAM_HANDLE = 'savarentals';
 export const INSTAGRAM_URL = 'https://www.instagram.com/savarentals/';
 
