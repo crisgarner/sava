@@ -9,12 +9,13 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        'brand-cream': '#F8F0E8',
-        'brand-ivory': '#FAF8F3',
-        'brand-gold': '#D1A62E',
+        'brand-cream': '#F7EDE4',
+        'brand-ivory': '#FAF5EE',
+        'brand-gold': '#886214',
         'brand-olive': '#8F932D',
-        'brand-dark': '#0D3316',
-        'brand-muted': '#7A7670',
+        'brand-dark': '#3A5245',
+        'brand-muted': '#6B6764',
+        'brand-sage': '#8A9E96',
       },
       fontFamily: {
         serif: ['var(--font-cormorant)', 'Georgia', 'serif'],

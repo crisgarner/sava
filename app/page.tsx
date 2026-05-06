@@ -32,7 +32,7 @@ export default function HomePage() {
     .slice(0, 6);
 
   return (
-    <main id="inicio" className="flex flex-col">
+    <main id="main-content" className="flex flex-col">
       {/* Hero */}
       <section className="relative flex min-h-screen w-full items-center justify-center overflow-hidden">
         <Image
@@ -55,7 +55,7 @@ export default function HomePage() {
           <div className="mt-10 flex flex-col gap-3 sm:flex-row">
             <Link
               href="/catalogo"
-              className="inline-flex items-center justify-center rounded-sm bg-brand-gold px-8 py-3.5 text-sm font-medium tracking-wider text-white transition-colors hover:bg-white hover:text-brand-dark"
+              className="inline-flex items-center justify-center rounded-sm bg-brand-gold px-8 py-3.5 text-sm font-medium tracking-wider text-white transition-colors hover:bg-brand-cream hover:text-brand-dark"
             >
               Ver Catálogo
             </Link>
@@ -63,7 +63,7 @@ export default function HomePage() {
               href={whatsappLink('Hola! Me gustaría cotizar un alquiler para mi evento.')}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center rounded-sm border border-white bg-transparent px-8 py-3.5 text-sm font-medium tracking-wider text-white transition-colors hover:bg-white hover:text-brand-dark"
+              className="inline-flex items-center justify-center rounded-sm border border-white bg-transparent px-8 py-3.5 text-sm font-medium tracking-wider text-white transition-colors hover:bg-brand-cream hover:text-brand-dark"
             >
               Cotizar ahora
             </a>
@@ -76,20 +76,25 @@ export default function HomePage() {
         <div className="mx-auto grid max-w-5xl gap-12 md:grid-cols-3">
           {[
             {
+              n: '01',
               title: 'Inventario elegante y moderno',
               body: 'Seleccionamos cada pieza para realzar la estética de tu evento.',
             },
             {
+              n: '02',
               title: 'Entrega en toda Tegucigalpa',
               body: 'Cobertura en Centro, Metro amplio y afueras del Valle.',
             },
             {
+              n: '03',
               title: 'Respuesta en menos de 2 horas',
               body: 'Te contestamos rápido por WhatsApp con tu cotización personalizada.',
             },
           ].map((v) => (
-            <div key={v.title} className="flex flex-col gap-3 text-center">
-              <div className="mx-auto h-px w-10 bg-brand-olive" />
+            <div key={v.title} className="flex flex-col gap-4">
+              <span className="font-serif text-5xl leading-none text-brand-gold">
+                {v.n}
+              </span>
               <h3 className="font-serif text-2xl text-brand-dark">{v.title}</h3>
               <p className="text-sm leading-relaxed text-brand-muted">
                 {v.body}
@@ -100,10 +105,10 @@ export default function HomePage() {
       </section>
 
       {/* Packages */}
-      <section id="paquetes" className="bg-white px-6 py-20 md:py-28">
+      <section id="paquetes" className="bg-brand-ivory px-6 py-20 md:py-28">
         <div className="mx-auto max-w-6xl">
           <div className="mx-auto max-w-2xl text-center">
-            <span className="text-xs font-medium uppercase tracking-[0.25em] text-brand-olive">
+            <span className="text-xs font-medium uppercase tracking-[0.25em] text-brand-muted">
               Paquetes
             </span>
             <h2 className="mt-3 font-serif text-4xl text-brand-dark md:text-5xl">
@@ -142,7 +147,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-6xl">
           <div className="flex flex-col items-start justify-between gap-4 md:flex-row md:items-end">
             <div>
-              <span className="text-xs font-medium uppercase tracking-[0.25em] text-brand-olive">
+              <span className="text-xs font-medium uppercase tracking-[0.25em] text-brand-muted">
                 Catálogo
               </span>
               <h2 className="mt-3 font-serif text-4xl text-brand-dark md:text-5xl">
@@ -165,10 +170,10 @@ export default function HomePage() {
       </section>
 
       {/* Service zones */}
-      <section className="bg-white px-6 py-20 md:py-28">
+      <section className="bg-brand-ivory px-6 py-20 md:py-28">
         <div className="mx-auto max-w-6xl">
           <div className="mx-auto max-w-2xl text-center">
-            <span className="text-xs font-medium uppercase tracking-[0.25em] text-brand-olive">
+            <span className="text-xs font-medium uppercase tracking-[0.25em] text-brand-muted">
               Cobertura
             </span>
             <h2 className="mt-3 font-serif text-4xl text-brand-dark md:text-5xl">
@@ -205,7 +210,7 @@ export default function HomePage() {
       {/* Instagram */}
       <section className="bg-brand-cream px-6 py-20 md:py-28">
         <div className="mx-auto max-w-6xl text-center">
-          <span className="text-xs font-medium uppercase tracking-[0.25em] text-brand-olive">
+          <span className="text-xs font-medium uppercase tracking-[0.25em] text-brand-muted">
             Instagram
           </span>
           <h2 className="mt-3 font-serif text-4xl text-brand-dark md:text-5xl">
@@ -288,7 +293,7 @@ export default function HomePage() {
           <div>
             <div className="flex items-baseline gap-1.5">
               <span className="font-serif text-3xl text-white">Savá</span>
-              <span className="text-sm uppercase tracking-[0.25em] text-brand-gold">
+              <span className="text-sm uppercase tracking-[0.25em] text-brand-cream/70">
                 Rentals
               </span>
             </div>
@@ -300,22 +305,22 @@ export default function HomePage() {
             <h4 className="font-serif text-lg text-white">Navegación</h4>
             <ul className="mt-4 flex flex-col gap-2 text-sm text-brand-cream/70">
               <li>
-                <Link href="/" className="hover:text-brand-gold">
+                <Link href="/" className="hover:text-white">
                   Inicio
                 </Link>
               </li>
               <li>
-                <Link href="/catalogo" className="hover:text-brand-gold">
+                <Link href="/catalogo" className="hover:text-white">
                   Catálogo
                 </Link>
               </li>
               <li>
-                <Link href="/#paquetes" className="hover:text-brand-gold">
+                <Link href="/#paquetes" className="hover:text-white">
                   Paquetes
                 </Link>
               </li>
               <li>
-                <Link href="/#contacto" className="hover:text-brand-gold">
+                <Link href="/#contacto" className="hover:text-white">
                   Contacto
                 </Link>
               </li>
@@ -330,13 +335,13 @@ export default function HomePage() {
               href={INSTAGRAM_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-4 inline-block text-sm text-brand-cream/70 hover:text-brand-gold"
+              className="mt-4 inline-block text-sm text-brand-cream/70 hover:text-white"
             >
               @{INSTAGRAM_HANDLE}
             </a>
           </div>
         </div>
-        <div className="mx-auto mt-12 max-w-6xl border-t border-brand-cream/10 pt-6 text-center text-xs text-brand-cream/60">
+        <div className="mx-auto mt-12 max-w-6xl border-t border-brand-cream/10 pt-6 text-center text-xs text-brand-cream/70">
           © 2026 Savá Rentals · Tegucigalpa, Honduras
         </div>
       </footer>

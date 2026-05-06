@@ -3,9 +3,10 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import { usePathname } from 'next/navigation';
 
 const links = [
-  { href: '/#inicio', label: 'Inicio' },
+  { href: '/', label: 'Inicio' },
   { href: '/catalogo', label: 'Catálogo' },
   { href: '/#paquetes', label: 'Paquetes' },
   { href: '/#contacto', label: 'Contacto' },
@@ -14,6 +15,8 @@ const links = [
 export default function Nav() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
+  const overDarkHero = pathname === '/' && !scrolled;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -31,7 +34,7 @@ export default function Nav() {
       }`}
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 md:px-10">
-        <Link href="/" aria-label="Savá Rentals — inicio" className="flex items-center">
+        <Link href="/" aria-label="Savá Rentals, inicio" className="flex items-center">
           <Image
             src="/logos/logo-wordmark.png"
             alt="Savá Rentals"
@@ -47,7 +50,11 @@ export default function Nav() {
             <li key={link.href}>
               <Link
                 href={link.href}
-                className="text-sm tracking-wide text-brand-dark transition-colors hover:text-brand-gold"
+                className={`text-sm tracking-wide transition-colors ${
+                  overDarkHero
+                    ? 'text-white hover:text-white/75'
+                    : 'text-brand-dark hover:text-brand-gold'
+                }`}
               >
                 {link.label}
               </Link>
@@ -59,7 +66,9 @@ export default function Nav() {
           onClick={() => setOpen((o) => !o)}
           aria-label="Abrir menú"
           aria-expanded={open}
-          className="inline-flex h-10 w-10 items-center justify-center rounded-sm text-brand-dark md:hidden"
+          className={`inline-flex h-10 w-10 items-center justify-center rounded-sm transition-colors md:hidden ${
+            overDarkHero ? 'text-white' : 'text-brand-dark'
+          }`}
         >
           <svg
             viewBox="0 0 24 24"

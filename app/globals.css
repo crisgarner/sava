@@ -2,19 +2,72 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --color-cream: #F7EDE4;
+  --color-ivory: #FAF5EE;
+  --color-gold: #886214;
+  --color-dark: #3A5245;
+  --color-muted: #6B6764;
+  --color-olive: #8F932D;
+}
+
 html {
-  scroll-behavior: smooth;
   scroll-padding-top: 5rem;
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
 body {
-  background-color: #f8f0e8;
-  color: #0d3316;
+  background-color: var(--color-cream);
+  color: var(--color-dark);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
 
 ::selection {
-  background-color: #d1a62e;
-  color: #faf8f3;
+  background-color: var(--color-gold);
+  color: var(--color-ivory);
+}
+
+*:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.scrollbar-hide {
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.sr-only:focus {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 9999;
+  clip: auto;
+  width: auto;
+  height: auto;
+  padding: 0.75rem 1.25rem;
+  background: var(--color-dark);
+  color: #ffffff;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-radius: 2px;
+  text-decoration: none;
+  white-space: nowrap;
 }

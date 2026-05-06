@@ -62,6 +62,9 @@ export default function RootLayout({
       <body
         className={`${cormorant.variable} ${inter.variable} font-sans bg-brand-cream text-brand-dark`}
       >
+        <a href="#main-content" className="sr-only">
+          Saltar al contenido
+        </a>
         <Nav />
         {children}
         <WhatsAppButton />

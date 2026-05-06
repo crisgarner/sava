@@ -16,7 +16,7 @@ export default function ProductGallery({ images, alt }: Props) {
 
   return (
     <div className="flex flex-col gap-4">
-      <div className="relative aspect-square w-full overflow-hidden rounded-sm bg-stone-100">
+      <div className="relative aspect-square w-full overflow-hidden rounded-sm bg-brand-ivory">
         {current && !errors[active] ? (
           <Image
             key={current}
@@ -45,8 +45,8 @@ export default function ProductGallery({ images, alt }: Props) {
               type="button"
               onClick={() => setActive(i)}
               aria-label={`Ver imagen ${i + 1} de ${images.length}`}
-              aria-current={i === active}
-              className={`relative aspect-square overflow-hidden rounded-sm border bg-stone-100 transition-opacity ${
+              aria-pressed={i === active}
+              className={`relative aspect-square overflow-hidden rounded-sm border bg-brand-ivory transition-opacity ${
                 i === active
                   ? 'border-brand-gold opacity-100'
                   : 'border-transparent opacity-70 hover:opacity-100'

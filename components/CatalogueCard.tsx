@@ -21,10 +21,10 @@ export default function CatalogueCard({ item }: Props) {
       <Link
         href={detailHref}
         aria-label={`Ver detalles de ${item.name}`}
-        className="relative block aspect-square w-full bg-stone-100"
+        className="relative block aspect-square w-full bg-brand-ivory"
       >
         {imgError || !primaryImage ? (
-          <div className="absolute inset-0 flex items-center justify-center bg-stone-100 p-6 text-center">
+          <div className="absolute inset-0 flex items-center justify-center bg-brand-ivory p-6 text-center">
             <span className="font-serif text-lg text-brand-muted">
               {item.name}
             </span>
@@ -42,7 +42,7 @@ export default function CatalogueCard({ item }: Props) {
       </Link>
       <div className="flex flex-1 flex-col gap-3 p-5">
         <div className="flex-1">
-          <h3 className="font-serif text-xl leading-tight text-brand-dark">
+          <h3 className="line-clamp-2 font-serif text-xl leading-tight text-brand-dark">
             <Link href={detailHref} className="transition-colors hover:text-brand-gold">
               {item.name}
             </Link>

@@ -8,7 +8,7 @@ type Props = {
 export default function ZoneCard({ zone, area, neighborhoods, price }: Props) {
   return (
     <div className="flex flex-col gap-3 rounded-sm border border-brand-gold/20 bg-brand-ivory p-8">
-      <span className="text-xs font-medium uppercase tracking-[0.2em] text-brand-olive">
+      <span className="text-xs font-medium uppercase tracking-[0.25em] text-brand-muted">
         {zone}
       </span>
       <h3 className="font-serif text-2xl text-brand-dark">{area}</h3>

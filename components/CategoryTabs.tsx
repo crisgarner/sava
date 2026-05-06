@@ -17,14 +17,14 @@ export default function CategoryTabs({ active }: Props) {
 
   return (
     <nav aria-label="Categorías" className="border-b border-brand-gold/15">
-      <ul className="flex flex-wrap gap-x-2 gap-y-1">
+      <ul className="flex overflow-x-auto scrollbar-hide gap-x-2 flex-nowrap">
         {tabs.map((tab) => {
           const isActive = tab.key === active;
           return (
-            <li key={tab.key}>
+            <li key={tab.key} className="shrink-0">
               <Link
                 href={tab.href}
-                className={`inline-flex items-center border-b-2 px-4 py-3 text-sm tracking-wide transition-colors ${
+                className={`inline-flex items-center whitespace-nowrap border-b-2 px-4 py-3 text-sm tracking-wide transition-colors ${
                   isActive
                     ? 'border-brand-gold text-brand-dark'
                     : 'border-transparent text-brand-muted hover:text-brand-dark'

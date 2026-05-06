@@ -42,7 +42,7 @@ export default function ProductDetailPage({ params }: RouteParams) {
     .slice(0, 3);
 
   return (
-    <main className="bg-brand-cream pt-28 md:pt-32">
+    <main id="main-content" className="bg-brand-cream pt-28 md:pt-32">
       <section className="mx-auto max-w-7xl px-6 pb-20 md:px-10">
         <nav aria-label="Migas de pan" className="mb-8 text-sm text-brand-muted">
           <Link href="/catalogo" className="hover:text-brand-dark">
@@ -63,7 +63,7 @@ export default function ProductDetailPage({ params }: RouteParams) {
           <ProductGallery images={item.images} alt={item.name} />
 
           <div className="flex flex-col">
-            <span className="text-xs font-medium uppercase tracking-[0.25em] text-brand-olive">
+            <span className="text-xs font-medium uppercase tracking-[0.25em] text-brand-muted">
               {categoryLabels[item.category]}
             </span>
             <h1 className="mt-3 font-serif text-4xl text-brand-dark md:text-5xl">
@@ -86,7 +86,7 @@ export default function ProductDetailPage({ params }: RouteParams) {
             </div>
 
             <div className="mt-8 border-t border-brand-gold/15 pt-8">
-              <h2 className="text-xs font-medium uppercase tracking-[0.25em] text-brand-olive">
+              <h2 className="text-xs font-medium uppercase tracking-[0.25em] text-brand-muted">
                 Descripción
               </h2>
               <p className="mt-3 text-base leading-relaxed text-brand-dark/80">
@@ -113,7 +113,7 @@ export default function ProductDetailPage({ params }: RouteParams) {
 
             {!item.available && (
               <p className="mt-6 text-sm text-brand-muted">
-                Actualmente no disponible — escríbenos para conocer fechas.
+                Actualmente no disponible: escríbenos para conocer fechas.
               </p>
             )}
           </div>

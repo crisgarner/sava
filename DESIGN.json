@@ -1,0 +1,265 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-05-01T00:00:00Z",
+  "title": "Design System: Savá Rentals",
+  "extensions": {
+    "colorMeta": {
+      "sand-warm": {
+        "role": "neutral",
+        "displayName": "Arena Cálida",
+        "canonical": "oklch(96% 0.018 70)",
+        "tonalRamp": [
+          "oklch(20% 0.016 70)",
+          "oklch(32% 0.018 70)",
+          "oklch(44% 0.020 70)",
+          "oklch(55% 0.020 70)",
+          "oklch(66% 0.020 70)",
+          "oklch(76% 0.020 70)",
+          "oklch(86% 0.019 70)",
+          "oklch(96% 0.018 70)"
+        ]
+      },
+      "ivory-soft": {
+        "role": "neutral",
+        "displayName": "Marfil Suave",
+        "canonical": "oklch(98% 0.008 75)",
+        "tonalRamp": [
+          "oklch(20% 0.006 75)",
+          "oklch(32% 0.007 75)",
+          "oklch(44% 0.008 75)",
+          "oklch(56% 0.008 75)",
+          "oklch(67% 0.008 75)",
+          "oklch(77% 0.008 75)",
+          "oklch(88% 0.008 75)",
+          "oklch(98% 0.008 75)"
+        ]
+      },
+      "antique-gold": {
+        "role": "primary",
+        "displayName": "Oro Antiguo",
+        "canonical": "oklch(72% 0.16 75)",
+        "tonalRamp": [
+          "oklch(22% 0.10 75)",
+          "oklch(34% 0.12 75)",
+          "oklch(44% 0.14 75)",
+          "oklch(54% 0.15 75)",
+          "oklch(63% 0.16 75)",
+          "oklch(72% 0.16 75)",
+          "oklch(82% 0.12 75)",
+          "oklch(92% 0.06 75)"
+        ]
+      },
+      "jungle-deep": {
+        "role": "neutral",
+        "displayName": "Verde Selva",
+        "canonical": "oklch(22% 0.08 155)",
+        "tonalRamp": [
+          "oklch(14% 0.06 155)",
+          "oklch(22% 0.08 155)",
+          "oklch(32% 0.08 155)",
+          "oklch(42% 0.08 155)",
+          "oklch(52% 0.07 155)",
+          "oklch(62% 0.06 155)",
+          "oklch(74% 0.05 155)",
+          "oklch(86% 0.03 155)"
+        ]
+      },
+      "warm-stone": {
+        "role": "neutral",
+        "displayName": "Piedra Cálida",
+        "canonical": "oklch(53% 0.010 60)",
+        "tonalRamp": [
+          "oklch(22% 0.008 60)",
+          "oklch(32% 0.009 60)",
+          "oklch(42% 0.010 60)",
+          "oklch(53% 0.010 60)",
+          "oklch(63% 0.009 60)",
+          "oklch(72% 0.009 60)",
+          "oklch(82% 0.008 60)",
+          "oklch(92% 0.006 60)"
+        ]
+      },
+      "olive-gold": {
+        "role": "neutral",
+        "displayName": "Olivo Dorado",
+        "canonical": "oklch(60% 0.14 110)",
+        "tonalRamp": [
+          "oklch(20% 0.10 110)",
+          "oklch(32% 0.12 110)",
+          "oklch(42% 0.13 110)",
+          "oklch(52% 0.14 110)",
+          "oklch(60% 0.14 110)",
+          "oklch(70% 0.12 110)",
+          "oklch(80% 0.09 110)",
+          "oklch(90% 0.05 110)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero headlines and major section anchors. Cormorant Garamond at largest sizes." },
+      "headline": { "displayName": "Headline", "purpose": "Package names, section titles, page headings." },
+      "title": { "displayName": "Title", "purpose": "Card headings, item names, sub-section labels." },
+      "body": { "displayName": "Body", "purpose": "Running copy, descriptions, meta text. Inter. Max 70ch." },
+      "label": { "displayName": "Label", "purpose": "Category tabs, badge text, navigation links. Inter uppercase." }
+    },
+    "shadows": [
+      {
+        "name": "card-hover",
+        "value": "0 4px 12px rgba(13, 51, 22, 0.08)",
+        "purpose": "Applied on card :hover only. Signals interactivity; invisible at rest."
+      },
+      {
+        "name": "floating-element",
+        "value": "0 4px 24px rgba(13, 51, 22, 0.16)",
+        "purpose": "WhatsApp button exclusively. Permanent lifted presence."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-standard",
+        "value": "cubic-bezier(0.4, 0, 0.2, 1)",
+        "purpose": "State transitions: color, border, background. 150ms."
+      },
+      {
+        "name": "ease-image",
+        "value": "cubic-bezier(0.4, 0, 0.2, 1)",
+        "purpose": "Image scale on card hover. 500ms."
+      },
+      {
+        "name": "ease-reveal",
+        "value": "cubic-bezier(0.4, 0, 0.2, 1)",
+        "purpose": "WhatsApp button text reveal on hover. 300ms."
+      },
+      {
+        "name": "ping-slow",
+        "value": "cubic-bezier(0.4, 0, 0.6, 1)",
+        "purpose": "WhatsApp button ambient pulse. 2500ms infinite. The only ambient animation in the system."
+      }
+    ],
+    "breakpoints": [
+      { "name": "mobile", "value": "375px" },
+      { "name": "tablet", "value": "768px" },
+      { "name": "desktop", "value": "1280px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Main CTA. Gold-filled, transitions to deep jungle on hover. Used for 'Cotizar' actions.",
+      "html": "<button class=\"ds-btn-primary\">Cotizar ahora</button>",
+      "css": ".ds-btn-primary { background: #D1A62E; color: #ffffff; padding: 12px 20px; border: none; border-radius: 2px; font-family: Inter, system-ui, sans-serif; font-size: 0.875rem; font-weight: 500; letter-spacing: 0.05em; cursor: pointer; transition: background 150ms cubic-bezier(0.4,0,0.2,1); } .ds-btn-primary:hover { background: #0D3316; } .ds-btn-primary:focus-visible { outline: 2px solid #D1A62E; outline-offset: 2px; }"
+    },
+    {
+      "name": "Ghost Dark Button",
+      "kind": "button",
+      "refersTo": "button-ghost-dark",
+      "description": "Secondary action alongside primary. 'Ver detalle' on catalogue cards.",
+      "html": "<button class=\"ds-btn-ghost-dark\">Ver detalle</button>",
+      "css": ".ds-btn-ghost-dark { background: transparent; color: #0D3316; border: 1px solid #0D3316; padding: 8px 16px; border-radius: 2px; font-family: Inter, system-ui, sans-serif; font-size: 0.875rem; font-weight: 500; letter-spacing: 0.05em; cursor: pointer; transition: background 150ms cubic-bezier(0.4,0,0.2,1), color 150ms cubic-bezier(0.4,0,0.2,1); } .ds-btn-ghost-dark:hover { background: #0D3316; color: #ffffff; } .ds-btn-ghost-dark:focus-visible { outline: 2px solid #0D3316; outline-offset: 2px; }"
+    },
+    {
+      "name": "Ghost Gold Button",
+      "kind": "button",
+      "refersTo": "button-ghost-gold",
+      "description": "WhatsApp CTA on catalogue cards. 'Consultar' action.",
+      "html": "<button class=\"ds-btn-ghost-gold\">Consultar</button>",
+      "css": ".ds-btn-ghost-gold { background: transparent; color: #D1A62E; border: 1px solid #D1A62E; padding: 8px 16px; border-radius: 2px; font-family: Inter, system-ui, sans-serif; font-size: 0.875rem; font-weight: 500; letter-spacing: 0.05em; cursor: pointer; transition: background 150ms cubic-bezier(0.4,0,0.2,1), color 150ms cubic-bezier(0.4,0,0.2,1); } .ds-btn-ghost-gold:hover { background: #D1A62E; color: #ffffff; } .ds-btn-ghost-gold:focus-visible { outline: 2px solid #D1A62E; outline-offset: 2px; }"
+    },
+    {
+      "name": "Catalogue Card",
+      "kind": "card",
+      "refersTo": "catalogue-card",
+      "description": "Product card in the catalogue grid. Image top, name + price + actions below.",
+      "html": "<article class=\"ds-catalogue-card\"><div class=\"ds-catalogue-card__image\"><span class=\"ds-catalogue-card__placeholder\">Copa de Agua</span></div><div class=\"ds-catalogue-card__body\"><h3 class=\"ds-catalogue-card__name\">Copa de Agua</h3><p class=\"ds-catalogue-card__price\"><span class=\"ds-catalogue-card__amount\">L. 12</span> · por unidad</p><div class=\"ds-catalogue-card__actions\"><button class=\"ds-btn-ghost-dark\">Ver detalle</button><button class=\"ds-btn-ghost-gold\">Consultar</button></div></div></article>",
+      "css": ".ds-catalogue-card { display: flex; flex-direction: column; overflow: hidden; border-radius: 2px; border: 1px solid rgba(209,166,46,0.15); background: #FAF8F3; box-shadow: 0 1px 3px rgba(13,51,22,0.06); transition: box-shadow 150ms cubic-bezier(0.4,0,0.2,1); } .ds-catalogue-card:hover { box-shadow: 0 4px 12px rgba(13,51,22,0.08); } .ds-catalogue-card__image { position: relative; aspect-ratio: 1; background: #e7e5e4; display: flex; align-items: center; justify-content: center; overflow: hidden; } .ds-catalogue-card__placeholder { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.125rem; color: #7A7670; padding: 24px; text-align: center; } .ds-catalogue-card__body { display: flex; flex-direction: column; gap: 12px; padding: 20px; } .ds-catalogue-card__name { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.25rem; font-weight: 600; line-height: 1.2; color: #0D3316; margin: 0; } .ds-catalogue-card__price { font-family: Inter, system-ui, sans-serif; font-size: 0.875rem; color: #7A7670; margin: 0; } .ds-catalogue-card__amount { font-weight: 500; color: #D1A62E; } .ds-catalogue-card__actions { display: flex; gap: 8px; } .ds-catalogue-card__actions .ds-btn-ghost-dark, .ds-catalogue-card__actions .ds-btn-ghost-gold { flex: 1; justify-content: center; }"
+    },
+    {
+      "name": "Package Card (Highlighted)",
+      "kind": "card",
+      "refersTo": "package-card-highlighted",
+      "description": "Pricing package card. Highlighted variant for the recommended tier ('Más popular' badge).",
+      "html": "<div class=\"ds-package-card ds-package-card--highlighted\"><span class=\"ds-package-card__badge\">Más popular</span><h3 class=\"ds-package-card__name\">Elegante</h3><p class=\"ds-package-card__includes\">Mantel + servilletas + copa de agua + copa de vino + plato base + lazo de silla + cubiertos</p><p class=\"ds-package-card__price\">Desde L. 100 / invitado</p><button class=\"ds-btn-primary\">Cotizar este paquete</button></div>",
+      "css": ".ds-package-card { position: relative; display: flex; flex-direction: column; border-radius: 2px; padding: 32px; border: 1px solid rgba(209,166,46,0.20); background: #ffffff; transition: box-shadow 150ms cubic-bezier(0.4,0,0.2,1); } .ds-package-card--highlighted { border-color: #D1A62E; background: #FAF8F3; box-shadow: 0 4px 12px rgba(13,51,22,0.08); } .ds-package-card__badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: #D1A62E; color: #ffffff; border-radius: 9999px; padding: 4px 16px; font-family: Inter, system-ui, sans-serif; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.10em; text-transform: uppercase; white-space: nowrap; } .ds-package-card__name { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.875rem; font-weight: 500; color: #0D3316; margin: 0 0 16px; } .ds-package-card__includes { font-family: Inter, system-ui, sans-serif; font-size: 0.875rem; line-height: 1.65; color: #7A7670; flex: 1; margin: 0 0 24px; } .ds-package-card__price { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.5rem; color: #D1A62E; margin: 0 0 24px; }"
+    },
+    {
+      "name": "Category Tab (Active)",
+      "kind": "chip",
+      "description": "Catalogue filter tab. Active state: gold fill. Inactive: ghost with gold border.",
+      "html": "<div class=\"ds-tab-group\"><button class=\"ds-tab ds-tab--active\">Todos</button><button class=\"ds-tab\">Mantelería</button><button class=\"ds-tab\">Cristalería</button></div>",
+      "css": ".ds-tab-group { display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none; padding-bottom: 4px; } .ds-tab-group::-webkit-scrollbar { display: none; } .ds-tab { background: transparent; border: 1px solid rgba(209,166,46,0.30); color: #7A7670; border-radius: 9999px; padding: 6px 18px; font-family: Inter, system-ui, sans-serif; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer; white-space: nowrap; transition: border-color 150ms, color 150ms, background 150ms; } .ds-tab:hover { border-color: #D1A62E; color: #0D3316; } .ds-tab--active { background: #D1A62E; border-color: #D1A62E; color: #ffffff; } .ds-tab--active:hover { background: #D1A62E; color: #ffffff; }"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "description": "Sticky top nav. Transparent at top of page; frosted cream on scroll.",
+      "html": "<header class=\"ds-nav ds-nav--scrolled\"><nav class=\"ds-nav__inner\"><a class=\"ds-nav__logo\" href=\"/\">Savá Rentals</a><ul class=\"ds-nav__links\"><li><a href=\"/#inicio\" class=\"ds-nav__link\">Inicio</a></li><li><a href=\"/catalogo\" class=\"ds-nav__link\">Catálogo</a></li><li><a href=\"/#paquetes\" class=\"ds-nav__link\">Paquetes</a></li><li><a href=\"/#contacto\" class=\"ds-nav__link\">Contacto</a></li></ul></nav></header>",
+      "css": ".ds-nav { position: fixed; inset-inline: 0; top: 0; z-index: 40; transition: background 300ms cubic-bezier(0.4,0,0.2,1), border-color 300ms; } .ds-nav--scrolled { background: rgba(248,240,232,0.80); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(209,166,46,0.10); } .ds-nav__inner { max-width: 1280px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 16px 40px; } .ds-nav__logo { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.5rem; font-weight: 500; color: #0D3316; text-decoration: none; } .ds-nav__links { display: flex; gap: 36px; list-style: none; margin: 0; padding: 0; } .ds-nav__link { font-family: Inter, system-ui, sans-serif; font-size: 0.875rem; letter-spacing: 0.05em; color: #0D3316; text-decoration: none; transition: color 150ms; } .ds-nav__link:hover { color: #D1A62E; }"
+    },
+    {
+      "name": "WhatsApp Button",
+      "kind": "custom",
+      "description": "Fixed bottom-right CTA. Permanent ambient pulse. Expands on hover to show 'Cotiza ahora' label.",
+      "html": "<a class=\"ds-whatsapp\" href=\"https://wa.me/504XXXXXXXX\" target=\"_blank\" rel=\"noopener noreferrer\" aria-label=\"Contactar por WhatsApp\"><span class=\"ds-whatsapp__ping\"></span><svg class=\"ds-whatsapp__icon\" viewBox=\"0 0 24 24\" fill=\"currentColor\" aria-hidden=\"true\"><path d=\"M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.372-.01-.57-.01-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z\"/><path d=\"M20.52 3.449C12.831-3.984.106 1.407.101 11.893c0 2.096.549 4.14 1.595 5.945L0 24l6.335-1.652a11.882 11.882 0 005.688 1.448h.005c9.893 0 16.812-11.008 10.5-19.08a11.821 11.821 0 00-2.008-1.267M12.03 21.786h-.004a9.86 9.86 0 01-5.03-1.378l-.36-.214-3.742.975 1.005-3.64-.235-.374a9.813 9.813 0 01-1.51-5.233c.003-8.76 10.695-13.144 16.882-6.957a9.73 9.73 0 012.867 6.937c-.006 5.434-4.425 9.884-9.875 9.884\"/></svg><span class=\"ds-whatsapp__label\">¡Cotiza ahora!</span></a>",
+      "css": "@keyframes ds-ping { 75%, 100% { transform: scale(2); opacity: 0; } } .ds-whatsapp { position: fixed; bottom: 20px; right: 20px; z-index: 50; display: flex; align-items: center; gap: 12px; border-radius: 9999px; background: #25D366; color: #ffffff; padding: 16px; text-decoration: none; box-shadow: 0 4px 24px rgba(13,51,22,0.16); transition: padding-right 300ms cubic-bezier(0.4,0,0.2,1), box-shadow 300ms; } .ds-whatsapp:hover { padding-right: 24px; box-shadow: 0 8px 32px rgba(13,51,22,0.22); } .ds-whatsapp__ping { position: absolute; inset: 0; border-radius: 9999px; background: #25D366; opacity: 0.40; animation: ds-ping 2.5s cubic-bezier(0.4,0,0.6,1) infinite; } .ds-whatsapp__icon { position: relative; width: 24px; height: 24px; flex-shrink: 0; } .ds-whatsapp__label { font-family: Inter, system-ui, sans-serif; font-size: 0.875rem; font-weight: 500; white-space: nowrap; max-width: 0; overflow: hidden; opacity: 0; transition: max-width 300ms cubic-bezier(0.4,0,0.2,1), opacity 300ms; } .ds-whatsapp:hover .ds-whatsapp__label { max-width: 200px; opacity: 1; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Elegancia a tu alcance",
+    "overview": "Savá Rentals exists to make elegant events accessible to everyone in Tegucigalpa. The design system reflects this precisely: it signals quality without the coldness of high-end luxury, warmth without the clutter of generic small-business websites. The surface should feel like the interior of a refined local boutique — natural materials, warm light, unhurried attention to detail.\n\nThe palette is built on cream and deep forest green, with antique gold as its single accent voice. Typographic contrast between Cormorant Garamond's editorial weight and Inter's quiet utility creates the tension that makes the brand legible: aspirational at the headline, practical at the detail. Every screen is flat by default. Shadows appear only as a whisper of hover feedback. Nothing decorates; everything serves.\n\nThis system explicitly rejects: generic Spanish-language SMB web templates, cheap marketplace grid aesthetics, cold catalog layouts that distance the brand from its clients, and any form of decorative complexity that contradicts the 'at your reach' promise.",
+    "keyCharacteristics": [
+      "Flat surfaces, no decorative depth",
+      "A single gold accent voice used at ≤15% of any given screen",
+      "Cormorant Garamond carrying all emotional weight at display sizes",
+      "WhatsApp-first: every primary CTA resolves to a direct phone conversation",
+      "Mobile-first layouts tuned to 375px, 768px, and 1280px"
+    ],
+    "rules": [
+      {
+        "name": "The One Voice Rule",
+        "body": "Antique Gold is the only colored accent in this system. It lives on CTAs, prices, hover states, and badges. It does not live anywhere else. Introducing a second accent color is prohibited.",
+        "section": "colors"
+      },
+      {
+        "name": "The No-White Rule",
+        "body": "Pure white (#ffffff) is banned as a page background. Sand Warm is the floor. Package cards in the default state may use white as an isolated surface, but it is the exception, not the default.",
+        "section": "colors"
+      },
+      {
+        "name": "The Serif Leads Rule",
+        "body": "Every page has at least one Cormorant display or headline element. A screen that uses only Inter has lost the brand identity.",
+        "section": "typography"
+      },
+      {
+        "name": "The Cap Track Rule",
+        "body": "Uppercase letter-spacing (≥ 0.06em) belongs only on Labels. Never on body copy, never on Cormorant headings.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat-at-Rest Rule",
+        "body": "Every surface renders flat at rest. If a surface needs to feel elevated without user interaction, use a border or a background step, not a shadow. Shadow is a state signal, not a style choice.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do use Antique Gold (#D1A62E) exclusively for CTAs, prices, active states, and badge fills. One color voice.",
+      "Do use Cormorant Garamond for every headline, section title, and price display. Serif presence on every screen.",
+      "Do keep all surfaces flat at rest. Shadow is a hover-state signal only.",
+      "Do write all user-facing copy in Spanish. Conversational and direct — warm, not formal.",
+      "Do size all interactive tap targets to ≥ 44px height on mobile. WhatsApp CTAs must be thumb-reachable.",
+      "Do use Sand Warm (#F8F0E8) for page canvas and Soft Ivory (#FAF8F3) for card surfaces.",
+      "Do end every user flow in a WhatsApp link. That is the conversion."
+    ],
+    "donts": [
+      "Don't use pure white (#ffffff) as a page background.",
+      "Don't introduce a second accent color. Golden Olive (#8F932D) is a tint, not an accent.",
+      "Don't use border-left or border-right greater than 1px as a colored stripe on cards or list items.",
+      "Don't use gradient text (background-clip: text with a gradient fill).",
+      "Don't apply uppercase letter-spacing to headings or body copy.",
+      "Don't use glassmorphism decoratively. The nav's backdrop-blur is functional (scroll state only).",
+      "Don't reach for modals. Inline and progressive disclosure first.",
+      "Don't let this look like a generic Spanish-language SMB template."
+    ]
+  }
+}
