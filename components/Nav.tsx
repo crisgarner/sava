@@ -3,20 +3,16 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import { usePathname } from 'next/navigation';
 
 const links = [
   { href: '/', label: 'Inicio' },
   { href: '/catalogo', label: 'Catálogo' },
-  { href: '/#paquetes', label: 'Paquetes' },
   { href: '/#contacto', label: 'Contacto' },
 ];
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const pathname = usePathname();
-  const overDarkHero = pathname === '/' && !scrolled;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -29,7 +25,7 @@ export default function Nav() {
     <header
       className={`fixed inset-x-0 top-0 z-40 transition-all duration-300 ${
         scrolled
-          ? 'border-b border-brand-gold/10 bg-brand-cream/80 backdrop-blur-md'
+          ? 'border-b border-white/20 bg-brand-cream/80 backdrop-blur-[10px]'
           : 'bg-transparent'
       }`}
     >
@@ -41,7 +37,7 @@ export default function Nav() {
             width={572}
             height={448}
             priority
-            className="h-10 w-auto md:h-12"
+            className="h-10 w-auto brightness-0 transition-all duration-300 md:h-12"
           />
         </Link>
 
@@ -50,11 +46,7 @@ export default function Nav() {
             <li key={link.href}>
               <Link
                 href={link.href}
-                className={`text-sm tracking-wide transition-colors ${
-                  overDarkHero
-                    ? 'text-white hover:text-white/75'
-                    : 'text-brand-dark hover:text-brand-gold'
-                }`}
+                className="text-sm tracking-wide text-brand-dark transition-colors hover:text-brand-accent"
               >
                 {link.label}
               </Link>
@@ -66,9 +58,7 @@ export default function Nav() {
           onClick={() => setOpen((o) => !o)}
           aria-label="Abrir menú"
           aria-expanded={open}
-          className={`inline-flex h-10 w-10 items-center justify-center rounded-sm transition-colors md:hidden ${
-            overDarkHero ? 'text-white' : 'text-brand-dark'
-          }`}
+          className="inline-flex h-10 w-10 items-center justify-center rounded-sm text-brand-dark transition-colors md:hidden"
         >
           <svg
             viewBox="0 0 24 24"
@@ -95,7 +85,7 @@ export default function Nav() {
                 <Link
                   href={link.href}
                   onClick={() => setOpen(false)}
-                  className="block py-3 text-base text-brand-dark hover:text-brand-gold"
+                  className="block py-3 text-base text-brand-dark hover:text-brand-accent"
                 >
                   {link.label}
                 </Link>

@@ -3,6 +3,9 @@ import Link from 'next/link';
 import { Suspense } from 'react';
 import CatalogueGrid from './CatalogueGrid';
 import { INSTAGRAM_HANDLE, INSTAGRAM_URL } from '@/lib/contact';
+import { getCatalogue } from '@/lib/getCatalogue';
+
+export const revalidate = 60;
 
 export const metadata: Metadata = {
   title: 'Catálogo',
@@ -16,20 +19,21 @@ export const metadata: Metadata = {
   },
 };
 
-export default function CataloguePage() {
+export default async function CataloguePage() {
+  const items = await getCatalogue();
   return (
-    <main id="main-content" className="bg-brand-cream pt-28 md:pt-32">
+    <main id="main-content" className="bg-brand-ivory pt-28 md:pt-32">
       <section className="mx-auto max-w-7xl px-6 pb-20 md:px-10">
         <header className="mb-12 max-w-2xl">
           <span className="text-xs font-medium uppercase tracking-[0.25em] text-brand-muted">
             Catálogo
           </span>
-          <h1 className="mt-3 font-serif text-5xl text-brand-dark md:text-6xl">
-            Inventario completo
+          <h1 className="mt-3 font-serif text-5xl font-light text-brand-forest md:text-6xl">
+            Nuestro Catálogo
           </h1>
           <p className="mt-4 text-base leading-relaxed text-brand-muted">
-            Filtra por categoría y escríbenos por WhatsApp para consultar
-            disponibilidad en la fecha de tu evento.
+            Explora nuestra colección completa de artículos premium para eventos.
+            Escríbenos por WhatsApp para consultar disponibilidad.
           </p>
         </header>
 
@@ -40,11 +44,11 @@ export default function CataloguePage() {
             </div>
           }
         >
-          <CatalogueGrid />
+          <CatalogueGrid items={items} />
         </Suspense>
 
-        <div className="mt-20 flex flex-col items-center gap-4 border-t border-brand-gold/15 pt-12 text-center">
-          <h2 className="font-serif text-3xl text-brand-dark">
+        <div className="mt-20 flex flex-col items-center gap-4 border-t border-brand-light pt-12 text-center">
+          <h2 className="font-serif text-3xl font-light text-brand-forest">
             ¿No encuentras lo que buscas?
           </h2>
           <p className="max-w-xl text-sm text-brand-muted">
@@ -53,7 +57,7 @@ export default function CataloguePage() {
           <div className="mt-4 flex flex-col gap-3 sm:flex-row">
             <Link
               href="/#contacto"
-              className="inline-flex items-center justify-center rounded-sm bg-brand-gold px-6 py-3 text-sm font-medium tracking-wider text-white transition-colors hover:bg-brand-dark"
+              className="inline-flex items-center justify-center rounded-sm bg-brand-accent px-6 py-3 text-sm font-medium tracking-wider text-white transition-colors hover:bg-brand-forest"
             >
               Contactar
             </Link>

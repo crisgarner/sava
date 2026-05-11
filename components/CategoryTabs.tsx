@@ -16,7 +16,7 @@ export default function CategoryTabs({ active }: Props) {
   ];
 
   return (
-    <nav aria-label="Categorías" className="border-b border-brand-gold/15">
+    <nav aria-label="Categorías" className="border-b border-brand-light">
       <ul className="flex overflow-x-auto scrollbar-hide gap-x-2 flex-nowrap">
         {tabs.map((tab) => {
           const isActive = tab.key === active;
@@ -26,7 +26,7 @@ export default function CategoryTabs({ active }: Props) {
                 href={tab.href}
                 className={`inline-flex items-center whitespace-nowrap border-b-2 px-4 py-3 text-sm tracking-wide transition-colors ${
                   isActive
-                    ? 'border-brand-gold text-brand-dark'
+                    ? 'border-brand-accent text-brand-accent'
                     : 'border-transparent text-brand-muted hover:text-brand-dark'
                 }`}
                 scroll={false}

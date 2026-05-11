@@ -23,6 +23,12 @@ export type CatalogueItem = {
   rentalPrice: number; // 0 = "Consultar precio"
   unit: string;
   available: boolean;
+  /** How many units are available to rent at once. */
+  stockQty?: number;
+  /** Dimensions, e.g. "274 × 274 cm" or "Ø 30 cm". */
+  dimensions?: string;
+  /** Material or finish, e.g. "Lino", "Cristal soplado". */
+  material?: string;
 };
 
 /**

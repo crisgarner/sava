@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import { useState } from 'react';
+import { resolveImage } from '@/lib/resolveImage';
 
 type Props = {
   images: string[];
@@ -20,7 +21,7 @@ export default function ProductGallery({ images, alt }: Props) {
         {current && !errors[active] ? (
           <Image
             key={current}
-            src={`/catalogue/${current}`}
+            src={resolveImage(current)}
             alt={alt}
             fill
             priority
@@ -48,13 +49,13 @@ export default function ProductGallery({ images, alt }: Props) {
               aria-pressed={i === active}
               className={`relative aspect-square overflow-hidden rounded-sm border bg-brand-ivory transition-opacity ${
                 i === active
-                  ? 'border-brand-gold opacity-100'
+                  ? 'border-brand-accent opacity-100'
                   : 'border-transparent opacity-70 hover:opacity-100'
               }`}
             >
               {!errors[i] ? (
                 <Image
-                  src={`/catalogue/${img}`}
+                  src={resolveImage(img)}
                   alt=""
                   fill
                   sizes="120px"
